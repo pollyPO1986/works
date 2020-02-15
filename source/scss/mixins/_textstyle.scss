@@ -1,0 +1,10 @@
+// 文字區塊限制
+@mixin font-dots($display:block,$text-rows:2,$rows-lineheight:22px){
+	display: $display; // 如果不是區塊元素的話，要加這一行
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $text-rows; // N 填入要顯示的行數
+	line-height: $rows-lineheight; // X 填入行高 px 值
+	height: $text-rows * $rows-lineheight; // 限定高度為 X * N 的 px 值
+}

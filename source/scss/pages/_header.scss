@@ -1,0 +1,177 @@
+// navbar
+.uki_nav {
+    .logo {
+        display: inline-block;
+        h1 {
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0 auto;
+            @include bgimg(center center, contain);
+            @include pc-width {
+                width: 160px;
+                height: calc(160px / 5 * 4);
+            }
+            @include spc-width {
+                width: 120px;
+                height: calc(120px / 5 * 4);
+            }
+        }
+    }
+    .button_container {
+        background: $white;
+        border-radius: 50%;
+        cursor: pointer;
+        @include flexbox(flex, nowrap, center, center);
+        transition: opacity .25s ease;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 46px;
+        height: 46px;
+        z-index: 1001;
+        .btnbox {
+            width: 22px;
+        }
+        &:hover {
+            opacity: .7;
+        }
+        &.active {
+            background: transparent;
+            .top {
+                transform: translateY(7px) translateX(0) rotate(45deg);
+                background: $white;
+            }
+            .middle {
+                opacity: 0;
+                background: $white;
+            }
+
+            .bottom {
+                transform: translateY(-7px) translateX(0) rotate(-45deg);
+                background: $white;
+            }
+        }
+
+        span {
+            background: $black;
+            border: none;
+            border-radius: 0;
+            display: block;
+            height: 3px;
+            transition: all .35s ease;
+            cursor: pointer;
+            +span {
+                margin-top: 4px;
+            }
+        }
+    }
+    .overlay {
+        background: linear-gradient(to right, rgba(darken($black, 15%), 0.5) 0%, rgba(darken($black, 15%), 0.4) 1%, black 100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 320ms ease-in-out;
+        z-index: 1000;
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            li {
+                animation: fadeInRight .5s ease forwards;
+                animation-delay: 0s;
+                &:nth-of-type(2) {
+                    animation-delay: .12s;
+                }
+                &:nth-of-type(3) {
+                    animation-delay: .24s;
+                }
+                &:nth-of-type(4) {
+                    animation-delay: .36s;
+                }
+            }
+        }
+        .overlay-menu {
+            position: absolute;
+            top: 50%;
+            right: 111px;
+            transform: translateY(-50%);
+            @include phone-width {
+                right: 30px;
+            }
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            li {
+                @include flexbox(flex, nowrap, flex-end, center);
+                text-align: right;
+                height: calc(50vh / 4);
+                min-height: 42px;
+                position: relative;
+                opacity: 0;
+                a {
+                    display: block;
+                    position: relative;
+                    color: lighten($sec_color,20%);
+                    text-decoration: none;
+                    overflow: hidden;
+                    @include fluid-type(16px, 22px);
+                    font-weight: 300;
+                    &:hover:after,
+                    &:focus:after,
+                    &:active:after {
+                        width: 100%;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: 0%;
+                        transform: translateX(-50%);
+                        height: 1px;
+                        background: $grey;
+                        transition: .35s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sub {
+    color: $white;
+    letter-spacing: 1px;
+    >span {
+        color: $main_color;
+        font-size: 120%;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

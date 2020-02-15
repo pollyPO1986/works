@@ -1,0 +1,25 @@
+@charset "utf-8";
+@import "plugin/variables"; //這支要在bootstrap前面
+@import "bootstrap";
+@import "icomoon";
+@import "reset";
+@import "variable";
+@import "mixin";
+@import "extend";
+@import "plugin/slick";
+@import "plugin/slick-theme";
+@import "pages";
+
+// print設定要想辦法獨立一支，另外載入；寫法：<link rel="stylesheet" media="print" href="printer.css" />  <!-- 只有在影印的時候才會套用 -->
+@media print {
+  @page {
+    size: 210mm 297mm; 
+    margin: 5mm;
+  }
+  .container {
+    width: 1170px;
+  }
+  a[href]:after {
+    content: "";
+  }
+}

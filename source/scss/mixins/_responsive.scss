@@ -1,0 +1,36 @@
+//media query
+@mixin pc-width(){
+	@media all and (min-width: $bpc-media){
+		@content;
+	}
+}
+@mixin table-up-width(){
+	@media all and (min-width: $table-media){
+		@content;
+	}
+}
+@mixin spc-width(){
+	@media all and (max-width: $spc-media){
+		@content;
+	}
+}
+@mixin table-width(){
+	@media all and (max-width: $table-media){
+		@content;
+	}
+}
+@mixin phone-width(){
+	@media all and (max-width: $mobile-media){
+		@content;
+	}
+}
+@mixin iphone-s-width(){
+	@media all and (max-width: $i7mobile-media){
+		@content;
+	}
+}
+@mixin sphone-width(){
+	@media all and (max-width: $smobile-media){
+		@content;
+	}
+}

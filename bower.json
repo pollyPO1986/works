@@ -1,0 +1,25 @@
+{
+  "name": "uki_works",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "uki"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "vendors/"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap-sass": "^3.3.7",
+    "slick-carousel": "^1.8.1",
+    "typed.js": "^2.0.9"
+  },
+  "private": true
+}

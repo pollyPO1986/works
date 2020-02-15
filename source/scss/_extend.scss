@@ -1,0 +1,51 @@
+//bg cover
+%bgimg{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+// 置中
+%center-box{
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//font icon
+%icons-flat{
+	display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}
+
+//font awesome
+%icons-f{
+	font-style: normal;
+	font-variant: normal;
+	font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Clearfix
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+  	content: ' ';
+  	display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

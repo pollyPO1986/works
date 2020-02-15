@@ -1,0 +1,54 @@
+.btn {
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white;
+    }
+    &:visited {
+        color: $white;
+    }
+}
+
+.btn_black {
+    color: $white;
+    background-color: $black;
+    border-color: $black;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    @include table-up-width {
+        padding: 15px 30px; // width: 150px;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background-color: $main_color;
+        border-color: $main_color;
+    }
+    span {
+        line-height: 1px;
+        &:after {
+            @include triangle(transparent transparent transparent $white, 3px 0 3px 6px);
+            content: '';
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            background: transparent;
+        }
+    }
+    &.back {
+        span {
+            &:after {
+                all:unset;
+            }
+            &:before {
+                @include triangle(transparent $white transparent transparent, 3px 6px 3px 0);
+                content: '';
+                display: inline-block;
+                margin-right: 5px;
+                vertical-align: middle;
+                background: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,438 @@
+// 禁止轉譯CSS 優化google fonts字型 (僅載入需要的字型粗細，移除@import url) <== 這只是偷懶做法 其他參考 google web font optimization
+// latin-ext
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+// latin
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+// latin-ext
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+// latin
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'),
+       url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+   font-family: 'Noto Sans TC';
+   font-style: normal;
+   font-weight: 400;
+   src: url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
+        url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
+        url(https://fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+ }
+// 字型優化結束
+
+body {
+		color: $black;
+    font-family: "Lato", "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+}
+
+::selection {
+    background: rgba($main_color, .5);
+    color: $white;
+    text-shadow: none;
+}
+
+a {
+    color: $main_color;
+    transition: color .2s linear;
+    &:link {
+        text-decoration: none;
+    } //-還沒被訪問的樣式
+    &:active {
+        text-decoration: none;
+    } //-滑鼠按下的樣式
+    &:visited {
+        text-decoration: none;
+    } //-被訪問過的樣式
+    &:hover {
+        text-decoration: none;
+        color: lighten($main_color, 15%);
+    } //-滑鼠滑過的樣式
+    &:focus {
+        text-decoration: none;
+        color: lighten($main_color, 15%);
+    } //-鍵盤聚焦的樣式
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+::-webkit-input-placeholder {
+    //- Chrome
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+    //- IE 10+
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus:-ms-input-placeholder {
+    opacity: 0.5;
+}
+
+::-moz-placeholder {
+    //- Firefox 19+
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus::-moz-placeholder {
+    opacity: 0.5;
+}
+
+:-moz-placeholder {
+    //- Firefox 4 - 18
+    color: $grey;
+    @include rem(font-size, 1.3rem);
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus:-moz-placeholder {
+    opacity: 0.5;
+}
+
+//------------------------------------------------------hr
+hr {
+    border-color: lighten($grey, 25%);
+}
+
+.divider-hr {
+    // position: relative;
+    overflow: hidden;
+    margin: auto 0;
+    color: lighten($grey, 25%);
+    width: 100%;
+    border-top: 1px solid lighten($grey, 25%); // &:before{
+    // 		content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   top: 8px;
+    //   left: 30px;
+    //   height: 0;
+    //   border-top: 1px solid lighten($grey, 25%);
+    // }
+}
+
+//------------------------------------------------------Footer置底
+
+
+//------------------------------------------------------breadcrumb
+.breadcrumb {
+    background: transparent;
+    @include rem(font-size, 1.3rem);
+    font-weight: 400;
+    padding: 0;
+    margin: 20px 0 6vh;
+    @include spc-width() {
+        margin: 10px 0;
+    }
+    >li+li:before {
+        // content: '> ';
+        content: '\003E';
+    }
+    a {
+        color: $grey;
+        &:hover {
+            color: $main_color;
+        }
+    }
+    .active {
+        color: darken($grey, 10%);
+    }
+    &:before {
+        content: '\2237 現在位置 \2237';
+        display: inline-block;
+        color: $grey;
+    }
+}
+
+//------------------------------------------------------textedit
+.textedit {
+    line-height: 170%;
+    color: $black;
+    h3 {
+        color: $black;
+        @include rem(font-size, 2.0rem);
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    p {
+        color: darken($black,10%);
+        margin: 0 0 20px;
+        letter-spacing: 1px;
+        line-height: 2;
+        @include rem(font-size, 1.8rem);
+        // font-weight: 300;
+        word-break: break-all;
+        // text-shadow: 0 0 0.0001em rgba($black, .2);
+    }
+    img {
+        margin: 10px auto;
+    }
+}
+
+.textedit_img {
+		margin-bottom: 30px;
+		img {
+        width: 100%;
+    }
+}
+
+.small_font {
+    font-size: 13px !important;
+    line-height: 140%;
+    letter-spacing: 1px;
+}
+
+//------------------------------------------------------ 404 & verify
+.page404 {
+    text-align: center;
+    @include table-up-width {
+        width: 800px;
+    }
+    @include table-width {
+        width: 100%;
+    }
+    h5 {
+    		line-height: 2.4;
+    		@include fluid-type(20px,28px);
+    		font-weight: 500;
+    		+h3 {
+    				margin-top: 15px;
+    		}
+    }
+    p {
+        @include fluid-type(15px,18px);
+        line-height: 2;
+    }
+    i {
+    		@include fluid-type(7.6rem,16.2rem);
+    }
+    .bigtitle {
+    		@include fluid-type(7.6rem,16.2rem);
+    		line-height: 1.4;
+    }
+}
+
+//------------------------------------------------------page
+.pagebox {
+    display: flex;
+    font-size: 0;
+    justify-content: center;
+    list-style: none;
+    margin: auto;
+    text-align: center;
+    li {
+        color: $white;
+        @include rem(font-size, 1.5rem);
+        line-height: 36px;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+    a {
+        color: $black;
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        position: relative;
+        &:hover {
+            &:after {
+                background: $black;
+                content: '';
+                display: inline-block;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                right: 30%;
+                left: 30%;
+            }
+        }
+    }
+    .on {
+        position: relative;
+        &:after {
+            background: $black;
+            content: '';
+            display: inline-block;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            right: 30%;
+            left: 30%;
+        }
+    }
+    .arrow {
+        background: $black;
+        font-size: inherit;
+        transition: all 0.3s ease-in-out;
+        @include sphone-width {
+            flex: 0 0 36px;
+        }
+        &:hover {
+            background: $main_color;
+        }
+    }
+    .page_arrow_right {
+        @include triangle(transparent transparent transparent $white, 3px 0 3px 6px);
+    }
+    .page_arrow_left {
+        @include triangle(transparent $white transparent transparent, 3px 6px 3px 0);
+    }
+}
+
+//------------------------------------------------------gotop
+#gotop {
+    display: none;
+    width: 46px;
+    height: 46px;
+    background: $black;
+    border-radius: 1px;
+    position: fixed;
+    right: 20px;
+    bottom: 1%;
+    z-index: 100;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all .5s ease;
+    &:after {
+        content: '\f077';
+        color: $white;
+        display: block;
+        font-family: 'Font Awesome\ 5 Free';
+        @include rem(font-size, 1.5rem);
+        font-weight: 900;
+        text-align: center;
+        line-height: 46px;
+    }
+    &:hover {
+        background: $main_color;
+        &:after {
+        		color: $white;
+        }
+    }
+    // &.foo_top {
+    //     bottom: 100px;
+    //     @include table-width {
+    //         bottom: 11%;
+    //     }
+    //     @include phone-width {
+    //         bottom: 20%;
+    //     }
+    // }
+}
+
+//------------------------------------------------------margin
+.mt5 {
+    margin-top: 5px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.mt40 {
+    margin-top: 40px !important;
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mt60 {
+    margin-top: 60px !important;
+}
+
+.mb5 {
+    margin-bottom: 5px !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.mb40 {
+    margin-bottom: 40px !important;
+}
+
+.mb60 {
+    margin-bottom: 60px !important;
+}
+
+//------------------------------------------------------ 網頁列印的樣式
+@media print {
+  @page {
+    size: 210mm 297mm; 
+    margin: 5mm;
+  }
+  // 下面兩個是為了BS所設定的
+  .container {
+    width: 1170px;
+  }
+  a[href]:after {
+    content: "";
+  }
+}

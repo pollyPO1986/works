@@ -1,0 +1,52 @@
+//logo
+@mixin logo-texthide {
+	text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url("../images/logo.png") left top no-repeat;
+  width: $logo-w;
+  height: $logo-h;
+  margin: 0;
+}
+
+//bg setting
+@mixin bgimg($bgposition:center center,$bgsize:cover) {
+	background-repeat: no-repeat;
+  background-position: $bgposition;
+  background-size: $bgsize;
+}
+
+//paint
+@mixin circle($size,$c-bgcolor) {
+  width: $size;
+  height: $size;
+  font-size: $size/3;
+  line-height: $size+2px;
+  background: $c-bgcolor; 
+	-moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+//flexbox
+@mixin flexbox($display:flex,$wrap:nowrap,$justify:center,$align:center) {
+	display: $display;
+	flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+//三角形
+@mixin triangle($tri-border-color,$tri-border-width){
+	border-color: $tri-border-color;
+	border-style: solid;
+	border-width: $tri-border-width;
+}
+
+//grid
+@mixin gridbox($display:grid,$columns:repeat(3,1fr),$column-gap:30px,$row-gap:30px) {
+	display: $display;
+	grid-template-columns: $columns; //- repeat(重覆次數,單位)
+	grid-column-gap: $column-gap; //- 左右間格
+	grid-row-gap: $row-gap; //- 欄跟欄的上下間格
+}

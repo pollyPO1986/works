@@ -1,0 +1,94 @@
+extend layout/_layout.pug
+
+include include/_mixins.pug
+
+block content
+	section#uki_slider
+		.uki_v_infobox.fullbox
+			.uki_caption.fullbox_cont
+				img.img-circle.img-thumbnail(src="images/about_uki.jpg", alt="I am Uki")
+				.caption
+					h2 Hi! 我是清瀠
+					.caption_typed
+						p I Am Web Develop
+						p I Am Front-End Engineer
+					span#typed
+			canvas.slider_mask
+			.bg_svg
+				svg(x='0px', y='0px', viewBox='0 186.5 1920 113.5')
+					polygon(points='-30,300 355.167,210.5 1432.5,290 1920,198.5 1920,300')
+
+	section#uki_profile
+		.container
+			.row
+				.col-xs-12.titlebar_line
+					h2.titles_line_font About Me
+				.col-xs-12.col-sm-5.col-md-4
+					.uki_info
+						h3 李清瀠
+							small Uki.L
+						p 網頁前端工程師
+						p 
+							a(href="mailto:polly0215yu@gmail.com") polly0215yu@gmail.com
+						ul.social_media
+							li
+								a(href="#", target="_blank")
+									i.fab.fa-line
+							li
+								a(href="https://www.linkedin.com/in/polly-lee-a02454163/", target="_blank")
+									i.fab.fa-linkedin
+							li
+								a(href="https://github.com/ukiLee", target="_blank")
+									i.fab.fa-github-square
+				.col-xs-12.col-sm-7.col-md-8
+					.textedit.about_uki
+						p 我叫李清瀠，喜歡學習新事物，對於自己有興趣的領域，都會自行收集資料及自學，工作後的空檔都還會去進修網頁前端相關的課程。
+						p 在前端設計的工作經驗約 5 年，前端工程的經驗約 1.5 年左右。
+						p 主要的工作範圍有：負責網頁或系統介面的前置討論及部分 UX 動線規劃、介面 UI 切板及整體網頁的動態效果、串接 API 綁定畫面資料等。 主要開發是使用 Vue 框架，近期團隊導入 Electron 框架開發桌面應用軟體，整合公司工廠系統、品牌客戶檢測系統。 團隊也導入 Scrum 敏捷開發流程，軟體開發工作都是環環相扣，敏捷開發讓團隊工作分配與因應客戶需求快速變化上有顯著效果。
+						p 本身對於網頁的視覺 UI、使用者互動的 UX 有熱情，對於創作有質感的畫面與操作動線順暢的產品有追求，未來希望可以更往這個方向學習與前進。
+
+	section#uki_skills.skill_box
+		.container
+			.row
+				.col-xs-12
+					.titlebar_line
+						h2.titles_line_font Skills
+				.col-xs-12
+					ul.uki_skills
+						li
+							i.fab.fa-html5
+						li
+							i.fab.fa-css3-alt
+						li
+							i.icon-pug
+						li
+							i.fab.fa-sass
+						li
+							i.fab.fa-js-square
+						li
+							i.fab.fa-gulp
+						li
+							i.fab.fa-npm
+						li
+							i.icon-bower
+						li
+							i.fab.fa-git
+						li
+							i.fab.fa-github-alt
+
+	section#uki_works
+		.container
+			.row
+				.col-xs-12.titlebar_line
+					h2.titles_line_font Works
+				.col-xs-12
+					// 最多八個
+					ul.row.grid_box.jq_carousel
+						+works('https://bit.ly/2RjTwMi','background-image:url(images/brand/grassland.svg);','草山境','Grassland','Html5、Css3、JQuery')
+						+works('https://bit.ly/2RkYLLH','background-image:url(images/brand/joyin.png);','哲隱會所','Joy In Villa','Html5、Css3、JQuery')
+						+works('https://bit.ly/2O1hJsX','background-image:url(images/brand/reger.svg);','銳覺設計','ReGeR Design','Html5、Css3、JQuery')
+						+works('https://bit.ly/2ybgTyN','background-image:url(images/brand/good_inside.svg);','好蘊設計','Good Inside','Html5、Css3、JQuery')
+						+works('https://bit.ly/2QsjUSN','background-image:url(images/brand/mystar.svg);','明星保養品','MYSTAR','Pug、Sass、JQuery、Gulp')
+						+works('https://bit.ly/2IB0KYn','background-image:url(images/brand/meiaka.svg);','梅仔咖','meizir','Html5、Css3、JQuery')
+						+works('https://bit.ly/2IBKS7V','background-image:url(images/brand/t-sweet.png);','微甜森林','Sweetforest','Html5、Css3、JQuery')
+						+works('https://bit.ly/2IB0Or5','background-image:url(images/brand/cappero.png);','卡沛諾義式餐酒館','Cappero ALIAN WINE RESTRAN','Pug、Sass、JQuery、Gulp')

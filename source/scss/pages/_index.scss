@@ -1,0 +1,219 @@
+// 首頁
+.titlebar_line {
+    .titles_line_font {
+        font-weight: 900;
+    }
+}
+
+.uki_v_infobox {
+    background: url(../images/bg/slider_w2000_01.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    &:after {
+        background: rgba($black,.8);
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+    .bg_svg {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        svg {
+            fill: #fff;
+            width: 101%;
+        }
+    }
+    .uki_caption {
+        text-align: center;
+        z-index: 3;
+        @include table-up-width {
+            min-width: 355px;
+        }
+        @include phone-width {
+            width: 80vw;
+        }
+        img {
+            @include table-up-width {
+                width: 200px;
+                height: 200px;
+            }
+            @include phone-width {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        .caption {
+            color:$white;
+            h2 {
+                letter-spacing: 1px;
+                margin: 15px 0;
+            }
+            span {
+                font-family: 'Poiret One', cursive;
+                @include fluid-type(16px, 34px);
+            }
+        }
+    }
+}
+
+.titlebar_sideline {
+    @include rem(font-size, 2.4rem);
+}
+
+.uki_info {
+    @include flexbox(flex, wrap, center, flex-start);
+    flex-direction: column;
+    @include table-up-width {
+        min-height: 360px;
+    }
+    @include table-width {
+        min-height: auto;
+    }
+    @include phone-width {
+        margin-bottom: 30px;
+    }
+    a {
+        color: $grey;
+        &:hover, &:focus {
+            color: lighten($sec_color,10%);
+        }
+    }
+    h3 {
+        small {
+            color: $grey;
+            display: inline-block;
+            margin-left: 15px;
+        }
+    }
+    p {
+        color: $sec_color;
+        @include rem(font-size, 1.6rem);
+        margin-top: 20px;
+    }
+    .social_media {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 0;
+        margin-top: 25px;
+        li {
+            display: inline-block;
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+            i {
+                @include rem(font-size, 5.4rem);
+            }
+        }
+    }
+}
+
+.skill_box {
+    background: url(../images/bg/slider_w2000_02.jpg);
+    padding: 0 0 10vh;
+    margin-top: 10vh;
+    position: relative;
+    overflow: hidden;
+    &:after {
+        background: rgba($black,.8);
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .titles_line_font {
+        z-index: 2;
+    }
+
+    .uki_skills {
+        list-style-type: none;
+        padding-left: 0;
+        position: relative;
+        z-index: 2;
+        @include table-up-width {
+            @include flexbox();
+        }
+        @include phone-width {
+            @include flexbox(flex,wrap,flex-start,stretch);
+        }
+        li {
+            flex-basis:10%;
+            text-align: center;
+            @include phone-width {
+                flex-basis:20%;
+                padding: 15px 0;
+            }
+            i {
+                color: $white;
+                @include fluid-type(40px, 54px);
+            }
+        }
+    }
+}
+
+.grid_box {
+    list-style: none;
+    letter-spacing: 1px;
+    li {
+        .pic-box {
+            background: darken($white,5%);
+            .moveimg {
+                background-origin:content-box;
+                .imgbox {
+                    background-size: contain;
+                }
+                &.square {
+                    @include table-up-width {
+                        padding: 25px;
+                    }
+                    @include table-width {
+                        padding: 15px;
+                    }
+                }
+            }
+            .caption {
+                h3 {
+                    @include fluid-type(16px, 22px);
+                    a {
+                        color: $black;
+                        display: block;
+                        &:hover,
+                        &:focus {
+                            color: $main_color;
+                        }
+                    }
+                }
+                .engsub {
+                    color:$grey;
+                    @include fluid-type(12px, 14px);
+                    line-height: 120%;
+                    text-transform: uppercase;
+                }
+                .skill {
+                    color:$sec_color;
+                    @include rem(font-size, 1.3rem);
+                    text-transform: uppercase;
+                    @include table-width {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .slick-dots {
+        bottom: -18px;
+    }
+}

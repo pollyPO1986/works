@@ -1,0 +1,116 @@
+// Mixin for Switch Colors
+// Variables: $toggle-color, $toggle-bg, $toggle-active-bg
+@mixin toggle-color($toggle-color,$toggle-bg,$toggle-active-bg) {
+    color: $toggle-color;
+    background: $toggle-bg;
+    &:before,
+    &:after {
+        color: $toggle-color;
+    }
+    &.active {
+        background-color: $toggle-active-bg;
+    }
+}
+
+// Mixin for Default Switch Styles
+// Variables: $toggle-mixin-size, $toggle-mixin-margin, $toggle-color, $toggle-bg, $toggle-active-bg, $toggle-mixin-font-size
+@mixin toggle-mixin($toggle-mixin-size,$toggle-mixin-margin,$toggle-mixin-font-size) {
+    // color: $toggle-color;
+    // background: $toggle-bg;
+    margin: 0 $toggle-mixin-margin;
+    padding: 0;
+    position: relative;
+    border: none;
+    height: $toggle-mixin-size;
+    width: $toggle-mixin-size * 2;
+    border-radius: $toggle-mixin-size;
+
+    &:focus,
+    &.focus {
+        &,
+        &.active {
+            outline: none;
+        }
+    }
+
+    &:before,
+    &:after {
+        line-height: $toggle-mixin-size;
+        width: $toggle-mixin-margin;
+        text-align: center;
+        font-weight: 600; 
+        // color: $toggle-color;
+        font-size: $toggle-mixin-font-size;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        transition: opacity .25s;
+    }
+    &:before {
+        content: 'Off';
+        left: -$toggle-mixin-margin;
+    }
+    &:after {
+        content: 'On';
+        right: -$toggle-mixin-margin;
+        opacity: .5;
+    }
+
+    >.handle {
+        position: absolute;
+        top: ($toggle-mixin-size * .25) / 2;
+        left: ($toggle-mixin-size * .25) / 2;
+        width: $toggle-mixin-size * .75;
+        height: $toggle-mixin-size * .75;
+        border-radius: $toggle-mixin-size * .75;
+        background: $white;
+        transition: left .25s;
+    }
+    &.active {
+        transition: background-color .25s;
+        >.handle {
+            left: $toggle-mixin-size + (($toggle-mixin-size * .25) / 2);
+            transition: left .25s;
+        }
+        &:before {
+            opacity: .5;
+        }
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &.btn-sm {
+        &:before,
+        &:after {
+            line-height: $toggle-mixin-size - 2px;
+            color: $white;
+            letter-spacing: .75px;
+            left: $toggle-mixin-size * .275;
+            width: $toggle-mixin-size * 1.55;
+        }
+        &:before {
+            text-align: right;
+        }
+        &:after {
+            text-align: left;
+            opacity: 0;
+        }
+        &.active {
+            &:before {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.btn-xs {
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}

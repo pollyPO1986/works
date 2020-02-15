@@ -1,0 +1,10 @@
+mixin works(website,pic,title,sub,skill)
+	li.col-xs-6.col-sm-3
+		.pic-box.thumbnail
+			a.moveimg.square(href=website, target="_blank")
+				.imgbox(style=pic)
+			.caption
+				h3
+					a(href=website, target="_blank") #{title}
+				span.engsub #{sub}
+				p.skill #{skill}
