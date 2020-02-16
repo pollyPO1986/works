@@ -8,3 +8,55 @@ mixin works(website,pic,title,sub,skill)
 					a(href=website, target="_blank") #{title}
 				span.engsub #{sub}
 				p.skill #{skill}
+
+mixin albums01(album,photos,cover,title,sub,skill)
+	li.col-xs-6.col-sm-3
+		.pic-box.thumbnail
+			a.moveimg.square(data-fancybox=album, data-thumbs='{"autoStart":true}', href=photos)
+				.imgbox(style=cover)
+			div(style='display: none;')
+				a(data-fancybox=album, href='images/album/tBike03.jpg', data-thumb='images/album/tBike03.jpg')
+				a(data-fancybox=album, href='images/album/tBike04.jpg', data-thumb='images/album/tBike04.jpg')
+				a(data-fancybox=album, href='images/album/tBike05.jpg', data-thumb='images/album/tBike05.jpg')
+			.caption
+				h3 #{title}
+				span.engsub #{sub}
+				p.skill #{skill}
+
+mixin albums02(album,photos,cover,title,sub,skill)
+	li.col-xs-6.col-sm-3
+		.pic-box.thumbnail
+			a.moveimg.square(data-fancybox=album, data-thumbs='{"autoStart":true}', href=photos)
+				.imgbox(style=cover)
+			div(style='display: none;')
+				a(data-fancybox=album, href='images/album/qBike02.jpg', data-thumb='images/album/qBike02.jpg')
+				a(data-fancybox=album, href='images/album/qBike03.jpg', data-thumb='images/album/qBike03.jpg')
+				a(data-fancybox=album, href='images/album/qBike04.jpg', data-thumb='images/album/qBike04.jpg')
+			.caption
+				h3 #{title}
+				span.engsub #{sub}
+				p.skill #{skill}
+
+mixin albums03(album,photos,cover,title,sub,skill)
+	li.col-xs-6.col-sm-3
+		.pic-box.thumbnail
+			a.moveimg.square(data-fancybox=album, data-thumbs='{"autoStart":true}', href=photos)
+				.imgbox(style=cover)
+			div(style='display: none;')
+				a(data-fancybox=album, href='images/album/eBike02.jpg', data-thumb='images/album/eBike02.jpg')
+				a(data-fancybox=album, href='images/album/eBike03.jpg', data-thumb='images/album/eBike03.jpg')
+				a(data-fancybox=album, href='images/album/eBike04.jpg', data-thumb='images/album/eBike04.jpg')
+			.caption
+				h3 #{title}
+				span.engsub #{sub}
+				p.skill #{skill}
+
+mixin lightbox(pic,cover,title,sub,skill)
+	li.col-xs-6.col-sm-3
+		.pic-box.thumbnail
+			a.moveimg.square(data-fancybox, href=pic)
+				.imgbox(style=cover)
+			.caption
+				h3 #{title}
+				span.engsub #{sub}
+				p.skill #{skill}

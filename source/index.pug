@@ -26,7 +26,7 @@ block content
 				.col-xs-12.col-sm-5.col-md-4
 					.uki_info
 						h3 李清瀠
-							small Uki.L
+							small Polly Lee
 						p 網頁前端工程師
 						p 
 							a(href="mailto:polly0215yu@gmail.com") polly0215yu@gmail.com
@@ -38,7 +38,7 @@ block content
 								a(href="https://www.linkedin.com/in/polly-lee-a02454163/", target="_blank")
 									i.fab.fa-linkedin
 							li
-								a(href="https://github.com/ukiLee", target="_blank")
+								a(href="https://github.com/pollyPO1986", target="_blank")
 									i.fab.fa-github-square
 				.col-xs-12.col-sm-7.col-md-8
 					.textedit.about_uki
@@ -70,11 +70,11 @@ block content
 						li
 							i.fab.fa-npm
 						li
-							i.icon-bower
-						li
 							i.fab.fa-git
 						li
 							i.fab.fa-github-alt
+						li 
+							i.fab.fa-vuejs
 
 	section#uki_works
 		.container
@@ -82,13 +82,22 @@ block content
 				.col-xs-12.titlebar_line
 					h2.titles_line_font Works
 				.col-xs-12
-					// 最多八個
+					.title_radiusTitlebar
+						h4 企業形象&電商作品
 					ul.row.grid_box.jq_carousel
 						+works('https://bit.ly/2RjTwMi','background-image:url(images/brand/grassland.svg);','草山境','Grassland','Html5、Css3、JQuery')
-						+works('https://bit.ly/2RkYLLH','background-image:url(images/brand/joyin.png);','哲隱會所','Joy In Villa','Html5、Css3、JQuery')
-						+works('https://bit.ly/2O1hJsX','background-image:url(images/brand/reger.svg);','銳覺設計','ReGeR Design','Html5、Css3、JQuery')
 						+works('https://bit.ly/2ybgTyN','background-image:url(images/brand/good_inside.svg);','好蘊設計','Good Inside','Html5、Css3、JQuery')
+						+works('http://bit.ly/2HtmfL6','background-image:url(images/brand/honmeiglass.svg);','鴻揚藝術玻璃','HyClass','Pug、Sass、JQuery、Gulp')
 						+works('https://bit.ly/2QsjUSN','background-image:url(images/brand/mystar.svg);','明星保養品','MYSTAR','Pug、Sass、JQuery、Gulp')
-						+works('https://bit.ly/2IB0KYn','background-image:url(images/brand/meiaka.svg);','梅仔咖','meizir','Html5、Css3、JQuery')
+						+works('http://bit.ly/2UUMxO5','background-image:url(images/brand/meiaka.svg);','梅仔咖','meizir','Html5、Css3、JQuery')
 						+works('https://bit.ly/2IBKS7V','background-image:url(images/brand/t-sweet.png);','微甜森林','Sweetforest','Html5、Css3、JQuery')
+						+works('http://bit.ly/2OWs1cf','background-image:url(images/brand/hiclick.svg);','海克力斯代運代購','Hiclick','Jade(Pug)、Sass、JQuery、Gulp')
 						+works('https://bit.ly/2IB0Or5','background-image:url(images/brand/cappero.png);','卡沛諾義式餐酒館','Cappero ALIAN WINE RESTRAN','Pug、Sass、JQuery、Gulp')
+				.col-xs-12
+					.title_radiusTitlebar
+						h4 公司系統作品
+					ul.row.grid_box.jq_carousel
+						+lightbox('images/album/bts.jpg','background-image:url(images/album/bts.jpg);','組車廠綁定系統','Bicycle tools system','Vue、Websocket、Javascript')
+						+albums01('album01','images/album/tBike01.jpg','background-image:url(images/album/tBike01.jpg);','T牌腳踏車檢測系統','Service Tool','Vue、Websocket、Javascript')
+						+albums02('album02','images/album/qBike01.jpg','background-image:url(images/album/qBike01.jpg);','Q牌腳踏車檢測系統','Service Tool','Vue、Websocket、Javascript')
+						+albums03('album03','images/album/eBike01.jpg','background-image:url(images/album/eBike01.jpg);','腳踏車檢測系統','Service Tool','Vue、Electron、Javascript、Node.js')

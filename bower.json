@@ -1,20 +1,11 @@
 {
-  "name": "uki_works",
+  "name": "works",
   "description": "",
   "main": "index.js",
-  "authors": [
-    "uki"
-  ],
+  "authors": ["pollypo"],
   "license": "ISC",
   "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "vendors/"
-  ],
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests", "vendors/"],
   "dependencies": {
     "jquery": "^3.2.1",
     "bootstrap-sass": "^3.3.7",
