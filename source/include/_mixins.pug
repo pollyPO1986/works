@@ -43,9 +43,9 @@ mixin albums03(album,photos,cover,title,sub,skill)
 			a.moveimg.square(data-fancybox=album, data-thumbs='{"autoStart":true}', href=photos)
 				.imgbox(style=cover)
 			div(style='display: none;')
+				a(data-fancybox=album, href='images/album/eBike01.jpg', data-thumb='images/album/eBike01.jpg')
 				a(data-fancybox=album, href='images/album/eBike02.jpg', data-thumb='images/album/eBike02.jpg')
 				a(data-fancybox=album, href='images/album/eBike03.jpg', data-thumb='images/album/eBike03.jpg')
-				a(data-fancybox=album, href='images/album/eBike04.jpg', data-thumb='images/album/eBike04.jpg')
 			.caption
 				h3 #{title}
 				span.engsub #{sub}
