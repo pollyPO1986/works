@@ -2777,9 +2777,9 @@ html { font-size: 62.5%; /* 1 */ }
 
 body { color: #333; font-family: 'Lato', 'Noto Sans TC', 'Apple LiGothic Medium', '微軟正黑體', 'Microsoft Jhenghei', sans-serif; }
 
-::-moz-selection { background: rgba(255, 184, 30, 0.5); color: #fff; text-shadow: none; }
+::-moz-selection { background: rgba(15, 71, 95, 0.5); color: #fff; text-shadow: none; }
 
-::selection { background: rgba(255, 184, 30, 0.5); color: #fff; text-shadow: none; }
+::selection { background: rgba(15, 71, 95, 0.5); color: #fff; text-shadow: none; }
 
 a { color: #ffb81e; -webkit-transition: color 0.2s linear; -o-transition: color 0.2s linear; transition: color 0.2s linear; }
 
