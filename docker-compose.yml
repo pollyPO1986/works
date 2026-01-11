@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    image: gulp-container
+    expose:
+      - 8080
+    ports:
+      - 3000:8080
+    volumes:
+      - .:/app
+      # 避免本機的 node_modules 污染容器內部，使用匿名 volume
+      - /app/node_modules
+      - /app/bower_components
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
+    # 保持容器運行，方便進去下指令
+    command: tail -f /dev/null
