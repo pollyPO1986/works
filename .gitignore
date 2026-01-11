@@ -1,11 +1,13 @@
-.tmp
-.publish
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-bk
-bulid
-data
-node_modules
-vendors
+# 基本設定
+.DS_Store
+.vscode/
+.github/
+Thumbs.db
+
+# 開發相關
+node_modules/
+build/
+dist/
+docs/
+data/
+vendors/
