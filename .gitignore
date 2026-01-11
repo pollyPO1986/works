@@ -1,5 +1,13 @@
-.tmp
-bulid/
-data/
+# 基本設定
+.DS_Store
+.vscode/
+.github/
+Thumbs.db
+
+# 開發相關
 node_modules/
+build/
+dist/
+docs/
+data/
 vendors/
